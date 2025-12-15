@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="style.css" />
+
+  <meta charset="UTF-8" />
+  <title>АвтоСТО - Главная</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrapper">
+    <div class="logo">ХАЙП-СТО</div>
+   <nav>
+  <ul id="nav-links">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="services.html">Услуги</a></li>
+    <li><a href="portfolio.html">Портфолио</a></li>
+    <li><a href="contact.html">Контакты</a></li>
+  </ul>
+</nav>
+
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero fade-slide-in">
+    <h1>Профессиональный ремонт и обслуживание вашего авто</h1>
+    <p>Диагностика, ремонт подвески, техническое обслуживание и многое другое.</p>
+    <a href="contact.html" class="button">Записаться на сервис</a>
+  </section>
+
+  <section class="fade-slide-in" style="animation-delay: 0.2s;">
+    <div class="section-header">
+      <h2>Наши преимущества</h2>
+      <p>Качество, надежность и честные цены.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card">
+        <img src="https://ram-service.ru/sites/default/files/diagnostika.jpg" alt="Диагностика авто" />
+        <h3>Диагностика</h3>
+        <p>Точная проверка всех систем вашего автомобиля.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80" alt="Ремонт подвески" />
+        <h3>Ремонт подвески</h3>
+        <p>Профессиональный ремонт и замена узлов подвески.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80" alt="Техобслуживание" />
+        <h3>Техобслуживание</h3>
+        <p>Полное техническое обслуживание автомобилей любой марки.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 АвтоСТО. Все права защищены.</p>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+  document.querySelectorAll('#nav-links a').forEach(link =>
+    link.addEventListener('click', () => navLinks.classList.remove('active'))
+  );
+</script>
+
+</body>
+</html>

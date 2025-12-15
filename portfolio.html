@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <title>АвтоСТО - Портфолио</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrapper">
+    <div class="logo">АвтоСТО</div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="portfolio.html" class="active">Портфолио</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section-header fade-slide-in">
+    <h2>Портфолио</h2>
+    <p>Примеры наших выполненных работ</p>
+  </section>
+
+  <section class="cards-grid fade-slide-in" style="animation-delay: 0.2s;">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Ремонт подвески" />
+      <h3>Ремонт подвески</h3>
+      <p>Замена амортизаторов и пружин, восстановление управляемости.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?auto=format&fit=crop&w=600&q=80" alt="Диагностика двигателя" />
+      <h3>Диагностика двигателя</h3>
+      <p>Комплексная диагностика и настройка работы двигателя.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=600&q=80" alt="Техническое обслуживание" />
+      <h3>Техническое обслуживание</h3>
+      <p>Плановое ТО, замена масла, фильтров и расходников.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 АвтоСТО. Все права защищены.</p>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+  document.querySelectorAll('#nav-links a').forEach(link =>
+    link.addEventListener('click', () => navLinks.classList.remove('active'))
+  );
+</script>
+
+</body>
+</html>

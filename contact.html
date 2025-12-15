@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head> 
+    <link rel="stylesheet" href="style.css" />
+
+  <meta charset="UTF-8" />
+  <title>АвтоСТО - Контакты</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Общие стили */
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      color: #222;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header {
+      background: #4361ee;
+      color: #fff;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    header .logo {
+      font-weight: 700;
+      font-size: 24px;
+      user-select: none;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    nav ul li a.active,
+    nav ul li a:hover {
+      background: #3f37c9;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    /* Мобильное меню */
+    @media(max-width: 768px) {
+      nav ul {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        width: 70%;
+        background: #4361ee;
+        flex-direction: column;
+        gap: 30px;
+        padding-top: 80px;
+        transition: right 0.3s ease;
+      }
+      nav ul.active {
+        right: 0;
+      }
+      .menu-toggle {
+        display: block;
+        color: white;
+      }
+    }
+
+    /* Заголовки и секции */
+    h2, h3 {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 10px;
+      border: 2px solid #c7c7c7;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 16px;
+      margin-top: 6px;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: #4361ee;
+      outline: none;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    button.submit-btn {
+      margin-top: 25px;
+      background: #4361ee;
+      border: none;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 14px;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+      box-shadow: 0 0 0 rgba(67, 97, 238, 0.7);
+      animation: pulse-btn 2.5s infinite;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    button.submit-btn:hover:not(:disabled) {
+      background: #3f37c9;
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(67, 97, 238, 0.6);
+    }
+    button.submit-btn:disabled {
+      background: #999;
+      cursor: not-allowed;
+      animation: none;
+      box-shadow: none;
+    }
+
+    /* Анимации */
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-slide-in {
+      opacity: 0;
+      animation-name: fadeSlideIn;
+      animation-fill-mode: forwards;
+      animation-duration: 0.8s;
+      animation-timing-function: cubic-bezier(0.5, 0, 0, 1);
+    }
+
+    @keyframes pulse-btn {
+      0% {
+        box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(67, 97, 238, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(67, 97, 238, 0);
+      }
+    }
+
+    /* Footer */
+    footer {
+      background: #050507;
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 50px;
+      font-size: 14px;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrapper">
+    <div class="logo">АвтоСТО</div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="portfolio.html">Портфолио</a></li>
+        <li><a href="contact.html" class="active">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section-header fade-slide-in" style="animation-delay: 0s;">
+    <h2>Свяжитесь с нами</h2>
+    <p>Запишитесь на диагностику, ремонт или задайте вопросы</p>
+  </section>
+
+  <section class="contact-form-section fade-slide-in" style="animation-delay: 0.15s;">
+    <form id="contactForm" action="https://formspree.io/f/mnneynkz" method="POST">
+      <label for="name">Ваше имя:</label>
+      <input type="text" id="name" name="name" required placeholder="Иван Иванов" />
+
+      <label for="phone">Телефон:</label>
+      <input type="tel" id="phone" name="phone" required placeholder="+7 777 111 93 67" pattern="[\+7]{2}\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}" />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required placeholder="email@example.com" />
+
+      <label for="service">Выберите услугу:</label>
+      <select id="service" name="service" required>
+        <option value="">-- Выберите --</option>
+        <option value="diagnostics">Диагностика</option>
+        <option value="suspension">Проверка подвески</option>
+        <option value="repair">Ремонт</option>
+      </select>
+
+      <label for="message">Комментарий:</label>
+      <textarea id="message" name="message" rows="4" placeholder="Ваши пожелания или вопросы"></textarea>
+
+      <button type="submit" class="submit-btn">Отправить заявку</button>
+    </form>
+  </section>
+
+  <section class="contacts-info fade-slide-in" style="animation-delay: 0.3s; margin-top: 40px;">
+    <h3>Наши контакты</h3>
+    <p><strong>Телефон:</strong> +7 777 411 93 67</p>
+    <p><strong>Email:</strong> ogg81025@gmail.com</p>
+    <p><strong>Адрес:</strong> г. Алматы, ул. Примерная 123</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 АвтоСТО. Все права защищены.</p>
+</footer>
+
+<script>
+  // Меню для мобильных
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+  document.querySelectorAll('#nav-links a').forEach(link =>
+    link.addEventListener('click', () => navLinks.classList.remove('active'))
+  );
+
+  // Отправка формы с Formspree (замени action на свой url)
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('button');
+    const originalText = btn.textContent;
+    btn.textContent = 'Отправка...';
+    btn.disabled = true;
+
+    const formData = new FormData(contactForm);
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        btn.textContent = 'Заявка отправлена! Спасибо!';
+        contactForm.reset();
+      } else {
+        btn.textContent = 'Ошибка отправки!';
+      }
+    } catch {
+      btn.textContent = 'Ошибка сети!';
+    }
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }, 4000);
+  });
+</script>
+
+</body>
+</html>
